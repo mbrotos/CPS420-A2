@@ -1,0 +1,80 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Walk</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Walk</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/fac/quigley/Courses/cps420/W20/A2/Walk.py">/fac/quigley/Courses/cps420/W20/A2/Walk.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="Walk.html#Walk">Walk</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Walk">class <strong>Walk</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Walk">Walk</a>&nbsp;objects&nbsp;can&nbsp;be&nbsp;used&nbsp;to&nbsp;build&nbsp;walks&nbsp;from&nbsp;Graphs.<br>
+A&nbsp;<a href="#Walk">Walk</a>&nbsp;is&nbsp;simply&nbsp;a&nbsp;list&nbsp;of&nbsp;vertices&nbsp;in&nbsp;the&nbsp;order&nbsp;in&nbsp;which&nbsp;they&nbsp;occur&nbsp;in&nbsp;the&nbsp;walk.&nbsp;&nbsp;The&nbsp;edges&nbsp;are&nbsp;not&nbsp;listed.<br>
+&nbsp;<br>
+Note:&nbsp;this&nbsp;class&nbsp;does&nbsp;not&nbsp;verify&nbsp;the&nbsp;validity&nbsp;of&nbsp;the&nbsp;walk,<br>
+i.e.&nbsp;it&nbsp;does&nbsp;not&nbsp;verify&nbsp;whether&nbsp;there&nbsp;are&nbsp;valid&nbsp;edges&nbsp;between&nbsp;two&nbsp;adjacent&nbsp;vertices&nbsp;in&nbsp;the&nbsp;walk.<br>
+&nbsp;<br>
+DO&nbsp;NOT&nbsp;MODIFY&nbsp;THIS&nbsp;CLASS<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Walk-__init__"><strong>__init__</strong></a>(self, maxVertices)</dt><dd><tt>Creates&nbsp;a&nbsp;new&nbsp;empty&nbsp;<a href="#Walk">Walk</a>.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;int&nbsp;maxVertices:&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;vertices&nbsp;in&nbsp;the&nbsp;<a href="#Walk">Walk</a>.</tt></dd></dl>
+
+<dl><dt><a name="Walk-__len__"><strong>__len__</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;edges&nbsp;in&nbsp;the&nbsp;<a href="#Walk">Walk</a>.<br>
+Note:&nbsp;an&nbsp;empty&nbsp;<a href="#Walk">Walk</a>&nbsp;and&nbsp;a&nbsp;<a href="#Walk">Walk</a>&nbsp;with&nbsp;a&nbsp;single&nbsp;vertex&nbsp;both&nbsp;have&nbsp;length&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="Walk-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;String&nbsp;representation&nbsp;of&nbsp;the&nbsp;<a href="#Walk">Walk</a>&nbsp;which&nbsp;is&nbsp;simply&nbsp;a&nbsp;list&nbsp;of&nbsp;vertices&nbsp;separated&nbsp;by&nbsp;blanks.</tt></dd></dl>
+
+<dl><dt><a name="Walk-addVertex"><strong>addVertex</strong></a>(self, vertex)</dt><dd><tt>Adds&nbsp;another&nbsp;vertex&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;<a href="#Walk">Walk</a>&nbsp;if&nbsp;possible.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;vertex:&nbsp;vertex&nbsp;to&nbsp;be&nbsp;added<br>
+&nbsp;&nbsp;<br>
+Returns&nbsp;True&nbsp;iff&nbsp;the&nbsp;vertex&nbsp;could&nbsp;be&nbsp;added,&nbsp;i.e&nbsp;maxVertices&nbsp;was&nbsp;not&nbsp;reached</tt></dd></dl>
+
+<dl><dt><a name="Walk-getVertex"><strong>getVertex</strong></a>(self, n)</dt><dd><tt>Returns&nbsp;the&nbsp;nth&nbsp;vertex&nbsp;in&nbsp;the&nbsp;<a href="#Walk">Walk</a>&nbsp;or&nbsp;<a href="#Walk">Walk</a>.NOVERTEX&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;such&nbsp;vertex.<br>
+&nbsp;<br>
+Parameters:<br>
+&nbsp;&nbsp;int&nbsp;n:&nbsp;position&nbsp;of&nbsp;vertex&nbsp;to&nbsp;be&nbsp;returned.&nbsp;&nbsp;Counting&nbsp;starts&nbsp;at&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="Walk-getVertices"><strong>getVertices</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;list&nbsp;of&nbsp;vertices&nbsp;in&nbsp;the&nbsp;<a href="#Walk">Walk</a>.</tt></dd></dl>
+
+<dl><dt><a name="Walk-isCircuit"><strong>isCircuit</strong></a>(self)</dt><dd><tt>Returns&nbsp;True&nbsp;iff&nbsp;the&nbsp;walk&nbsp;is&nbsp;a&nbsp;non-empty&nbsp;circuit.</tt></dd></dl>
+
+<dl><dt><a name="Walk-isEmpty"><strong>isEmpty</strong></a>(self)</dt><dd><tt>Returns&nbsp;True&nbsp;iff&nbsp;the&nbsp;walk&nbsp;has&nbsp;no&nbsp;vertices.</tt></dd></dl>
+
+<dl><dt><a name="Walk-isTrivial"><strong>isTrivial</strong></a>(self)</dt><dd><tt>Returns&nbsp;True&nbsp;iff&nbsp;the&nbsp;walk&nbsp;is&nbsp;a&nbsp;single&nbsp;vertex.</tt></dd></dl>
+
+<dl><dt><a name="Walk-removeLastVertex"><strong>removeLastVertex</strong></a>(self)</dt><dd><tt>Removes&nbsp;the&nbsp;last&nbsp;vertex&nbsp;added&nbsp;to&nbsp;<a href="#Walk">Walk</a>&nbsp;if&nbsp;possible.<br>
+Returns&nbsp;True&nbsp;iff&nbsp;the&nbsp;last&nbsp;vertex&nbsp;could&nbsp;be&nbsp;removed,&nbsp;i.e&nbsp;<a href="#Walk">Walk</a>&nbsp;was&nbsp;not&nbsp;empty</tt></dd></dl>
+
+<dl><dt><a name="Walk-totalVertices"><strong>totalVertices</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;vertices&nbsp;in&nbsp;the&nbsp;<a href="#Walk">Walk</a>.</tt></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>NOVERTEX</strong> = -1</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
