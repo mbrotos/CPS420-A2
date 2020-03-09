@@ -89,7 +89,7 @@ class Graph:
         # Create array of 0 edges
         edges = []
         for i in range(vertices):
-            edges.append(list([0]*vertices))
+            edges.append(([0]*vertices).copy())
 
         # Populate non-diagonal cells of matrix
         for i in range(vertices):
@@ -138,8 +138,8 @@ class Graph:
         self.unvisitedE = []
         
         for i in range(vertices):
-            self.visitedE.append(list([None]*vertices))
-            self.unvisitedE.append(list([None]*vertices))
+            self.visitedE.append(([None]*vertices).copy())
+            self.unvisitedE.append(([None]*vertices).copy())
         self.clearVisited()
         
         # Read adjacency matrix
