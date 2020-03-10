@@ -241,11 +241,9 @@ class Graph:
         or None if none exists.
         """
         if (self.totalVertices() >= 3 and self.isConnected()):
-            Hamiltonian = Walk(self.totalVertices()+1)
-            Hamiltonian.addVertex(0)
-            self.clearVisited()
-            if (self.tryVisiting(1, 1, Hamiltonian)):
-                print(Hamiltonian)
+            Hamiltonian = Walk(self.totalVertices()+1) #includes edge to complete circuit
+            Hamiltonian.addVertex(0) #assumes start at 0
+            if (self.tryVisiting(0, 1, Hamiltonian)):
                 return Hamiltonian
         return None
     
@@ -265,19 +263,19 @@ class Graph:
 
         Returns True iff a Hamiltonian circuit has been found and False otherwise
         """
-        if(totalvisited == self.totalV):
-            if(self.edges[Hamiltonian.getVertex(totalvisited-1)][0]==1):
-                Hamiltonian.addVertex(0)
+        if(totalvisited == self.totalV): #BASE CASE - all vertices visited
+            if(self.edges[vertex][0]==1):
+                Hamiltonian.addVertex(0)#completes circuit
                 return True
             else:
                 return False
 
         for i in range(1, self.totalV):
-            if(self.edges[Hamiltonian.getVertex(totalvisited-1)][i]==1 and i not in Hamiltonian.getVertices()):
+            if(self.edges[vertex][i]==1 and i not in Hamiltonian.getVertices()): #checks for adjacent vertices not already in path
                 Hamiltonian.addVertex(i)
-                if(self.tryVisiting(i,totalvisited+1,Hamiltonian)):
+                if(self.tryVisiting(i,totalvisited+1,Hamiltonian)):#recursive call on possible path
                     return True
-                Hamiltonian.removeLastVertex()
+                Hamiltonian.removeLastVertex()#backtracking if deadend reached
 
         return False
     
