@@ -72,7 +72,7 @@ class Walk:
     if 0 <= n and n < self.totalV:
       return self.vertices[n]
     else:
-      return NOVERTEX
+      return self.NOVERTEX
     
   def getVertices(self):
     """ Returns a copy of the list of vertices in the Walk. """
