@@ -245,6 +245,7 @@ class Graph:
             Hamiltonian.addVertex(0)
             self.clearVisited()
             if (self.tryVisiting(1, 1, Hamiltonian)):
+                print(Hamiltonian)
                 return Hamiltonian
         return None
     
@@ -264,22 +265,19 @@ class Graph:
 
         Returns True iff a Hamiltonian circuit has been found and False otherwise
         """
-        #print(totalvisited)
-        if (totalvisited == self.totalV):
-            #print(-1)
-            if self.edges[Hamiltonian.getVertex(self.totalV-1)][0] != 0:
+        if(totalvisited == self.totalV):
+            if(self.edges[Hamiltonian.getVertex(totalvisited-1)][0]==1):
+                Hamiltonian.addVertex(0)
                 return True
             else:
                 return False
 
-        for i in range(1,self.totalV):
-            if self.edges[Hamiltonian.getVertex(totalvisited-1)][i] != 0 and i not in Hamiltonian.getVertices():
-                Hamiltonian.addVertex(vertex)
-                #print(-1)
-                if(self.tryVisiting(i, totalvisited+1, Hamiltonian)):
+        for i in range(1, self.totalV):
+            if(self.edges[Hamiltonian.getVertex(totalvisited-1)][i]==1 and i not in Hamiltonian.getVertices()):
+                Hamiltonian.addVertex(i)
+                if(self.tryVisiting(i,totalvisited+1,Hamiltonian)):
                     return True
                 Hamiltonian.removeLastVertex()
 
-        
         return False
     
