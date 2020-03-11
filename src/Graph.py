@@ -240,6 +240,21 @@ class Graph:
         Returns a Hamiltonian circuit of type Walk for the graph if one exists,
         or None if none exists.
         """
+        matrix = self.getMatrix()
+
+        if len(matrix)<3:
+            return None
+            
+        Hamiltonian = Walk(len(matrix)+1)
+        curr_vert = 0
+
+        while(curr_vert<=len(matrix)):
+            circuit = self.tryVisiting(curr_vert, 1, Hamiltonian)
+            if (circuit):
+                Hamiltonian.addVertex(curr_vert)
+                return Hamiltonian
+
+            curr_vert += 1
         return None
     
 

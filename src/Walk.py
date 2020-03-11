@@ -72,11 +72,11 @@ class Walk:
     if 0 <= n and n < self.totalV:
       return self.vertices[n]
     else:
-      return NOVERTEX
+      return Walk.NOVERTEX
     
   def getVertices(self):
     """ Returns a copy of the list of vertices in the Walk. """
-    return self.vertices.copy()
+    return list(self.vertices)
 
   def addVertex(self, vertex):
     """Adds another vertex to the end of the Walk if possible.
@@ -101,4 +101,3 @@ class Walk:
     self.totalV -= 1
     self.vertices[self.totalV] = 0
     return True
-
