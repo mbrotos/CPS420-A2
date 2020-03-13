@@ -264,14 +264,14 @@ class Graph:
         Returns True iff a Hamiltonian circuit has been found and False otherwise
         """
         if(totalvisited == self.totalV): #BASE CASE - all vertices visited
-            if(self.edges[vertex][0]==1):
+            if(self.edges[vertex][0]>0):
                 Hamiltonian.addVertex(0)#completes circuit
                 return True
             else:
                 return False
 
         for i in range(1, self.totalV):
-            if(self.edges[vertex][i]==1 and i not in Hamiltonian.getVertices()): #checks for adjacent vertices not already in path
+            if(self.edges[vertex][i]>0 and i not in Hamiltonian.getVertices()): #checks for adjacent vertices not already in path
                 Hamiltonian.addVertex(i)
                 if(self.tryVisiting(i,totalvisited+1,Hamiltonian)):#recursive call on possible path
                     return True
